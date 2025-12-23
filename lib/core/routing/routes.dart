@@ -1,4 +1,3 @@
-class Routes{
+class Routes {
   static const String chatsConversation = "/chatsConversation";
-  
 }
