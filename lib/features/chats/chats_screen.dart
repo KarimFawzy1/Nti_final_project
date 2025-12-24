@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:nti_final_project/features/profile/widgets/custom_top_appbar.dart';
+import 'package:nti_final_project/features/profile/widgets/custom_bottom_navbar.dart';
 
 class ChatsScreen extends StatelessWidget {
   const ChatsScreen({super.key});
@@ -6,18 +8,8 @@ class ChatsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      bottomNavigationBar: BottomNavigationBar(
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Chats'),
-          BottomNavigationBarItem(icon: Icon(Icons.group), label: 'Groups'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.list_rounded),
-            label: 'More',
-          ),
-        ],
-      ),
+      appBar: CustomTopAppBar(),
+      bottomNavigationBar: CustomBottomNavBar(),
       body: Column(children: [Text('Chats Screen')]),
     );
   }
