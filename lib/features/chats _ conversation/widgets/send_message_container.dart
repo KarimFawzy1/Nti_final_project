@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:nti_final_project/core/helper/extensions.dart';
 import 'package:nti_final_project/core/theme/color_managers.dart';
 import 'package:nti_final_project/core/theme/style_managers.dart';
+import 'package:nti_final_project/features/chats%20_%20conversation/widgets/attachment_ptions.dart';
 
 class SendMessageContainer extends StatefulWidget {
   const SendMessageContainer({
@@ -71,7 +73,24 @@ class _SendMessageContainerState extends State<SendMessageContainer> {
                         ),
     
                       IconButton(
-                        onPressed: (){}, 
+                        onPressed: (){
+                          showDialog(
+                            context: context,
+                            barrierDismissible: true,
+                            barrierColor: Colors.black26,
+                            builder: (context) {
+                              return GestureDetector(
+                                onTap: () {
+                                  context.pop();
+                                },
+                                child: Material(
+                                  color: Colors.transparent,
+                                  child: AttachmentOption(),
+                                ),
+                              );
+                            },
+                          );
+                        }, 
                         icon: FaIcon(FontAwesomeIcons.paperclip, 
                         color: Colors.blueGrey, ),
                         ),
